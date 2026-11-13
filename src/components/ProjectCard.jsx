@@ -66,8 +66,8 @@ export default function ProjectCard({ project, index = 0 }) {
               <span
                 key={tag}
                 className={`px-2.5 py-0.5 rounded-md text-[11px] font-mono border transition-colors duration-300 ${tagIndex % 2 === 0
-                    ? 'bg-[#145CFF]/[0.06] text-[#145CFF] border-[#145CFF]/20 dark:bg-[#145CFF]/10 dark:text-[#91ACFF] dark:border-[#145CFF]/25'
-                    : 'bg-[#A3B85A]/[0.10] text-[#667D22] border-[#A3B85A]/30 dark:bg-[#C6FF00]/[0.07] dark:text-[#C6FF00] dark:border-[#C6FF00]/20'
+                  ? 'bg-[#145CFF]/[0.06] text-[#145CFF] border-[#145CFF]/20 dark:bg-[#145CFF]/10 dark:text-[#91ACFF] dark:border-[#145CFF]/25'
+                  : 'bg-[#A3B85A]/[0.10] text-[#667D22] border-[#A3B85A]/30 dark:bg-[#C6FF00]/[0.07] dark:text-[#C6FF00] dark:border-[#C6FF00]/20'
                   }`}
               >
                 {tag}
@@ -96,16 +96,18 @@ export default function ProjectCard({ project, index = 0 }) {
                 <GithubIcon className="w-4 h-4" />
               </a>
 
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`View live demo of ${project.title}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#145CFF] dark:bg-[#C6FF00] text-white dark:text-[#101116] hover:bg-[#0F4FE0] dark:hover:bg-[#D8FF4D] transition-colors shadow-sm"
-              >
-                <span>Live Demo</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View live demo of ${project.title}`}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#145CFF] dark:bg-[#C6FF00] text-white dark:text-[#101116] hover:bg-[#0F4FE0] dark:hover:bg-[#D8FF4D] transition-colors shadow-sm"
+                >
+                  <span>Live Demo</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
           </div>
         </div>
